@@ -10,6 +10,20 @@ info:
 servers:
     - url: /
 paths:
+    /health:
+        get:
+            description: |
+                Check health
+            operationId: health
+            responses:
+                '200':
+                    description: health response
+                default:
+                    description: unexpected error
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/Error'
     /rides:
         get:
             description: |

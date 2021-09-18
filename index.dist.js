@@ -92,6 +92,7 @@ const startApp = (app) => {
             message: err.message,
             errors: err.errors
         });
+        next();
     });
 };
 exports.startApp = startApp;
@@ -208,10 +209,10 @@ const getRidesList = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         };
         const data = yield sqlite3_1.DB.getByQuery(ride_1.Ride.COLLECTION_NAME, pagination);
         if (data.length > 0) {
-            let has_more = true;
-            let links = [];
+            let hasMore = true;
+            const links = [];
             if (data.length < limit) {
-                has_more = false;
+                hasMore = false;
             }
             else {
                 links.push({
@@ -221,7 +222,7 @@ const getRidesList = (req, res) => __awaiter(void 0, void 0, void 0, function* (
                 });
             }
             return res.json({
-                has_more,
+                has_more: hasMore,
                 data,
                 links
             });

@@ -13,6 +13,7 @@ import bodyParser from 'body-parser'
 import compression from 'compression'
 import helmet from 'helmet'
 import { morganMiddleware } from './config/morgan.middleware'
+import { healthRouter } from './routes/health.router'
 import { ridesRouter } from './routes/ride.router'
 
 const NODE_ENV = process.env.NODE_ENV
@@ -35,7 +36,7 @@ export const startApp = (app: Application) => {
         })
     )
 
-    app.get('/health', (req: Request, res: Response) => res.send('Healthy'))
+    app.use('/health', healthRouter)
 
     app.use('/rides', ridesRouter)
 
