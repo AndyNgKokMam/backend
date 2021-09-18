@@ -21,7 +21,7 @@
     "start": "nodemon index.ts",
     "serve1": "pm2 delete all && pm2 start ecosystem.config.js --no-daemon",
     "serve": "pm2 start ecosystem.config.js --no-daemon",
-    "clean": "pm2 delete all",
+    "clean": "",
     "build": "npm run clean && SET NODE_ENV=production && npx webpack --config webpack.config.js --node-env production",
     "gentoc": "markdown-toc -i README.md"
   },
