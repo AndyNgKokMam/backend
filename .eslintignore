@@ -3,5 +3,6 @@ coverage
 dist
 test-load
 ecosystem.config.js
+ecosystem.config.test.js
 index.dist.js
 webpack.config.js
