@@ -12,7 +12,7 @@
     "test:unit": "./node_modules/.bin/nyc ./node_modules/.bin/mocha --config .mocharc.json test/**/*.test.ts",
     "test": "npm run test:lint && npm run test:unit && ./node_modules/.bin/nyc report --reporter=html",
     "test:watch": "./node_modules/.bin/nodemon -x 'npm test'",
-    "test:artillery-debug": "SET DEBUG=http:response && artillery run test-load/load-test.yml",
+    "test:artillery-debug": "DEBUG=http:response && artillery run test-load/load-test.yml",
     "test:artillery": "./node_modules/.bin/artillery run test-load/load-test.yml report --output reports/report.html reports/report.json",
     "test:load": "start-server-and-test start http://localhost:8010/health test:artillery",
     "lint": "eslint index.ts ./**/*.{js,ts}",
@@ -22,7 +22,7 @@
     "serve1": "pm2 delete all && pm2 start ecosystem.config.js --no-daemon",
     "serve": "pm2 start ecosystem.config.js --no-daemon",
     "clean": "",
-    "build": "npm run clean && SET NODE_ENV=production && npx webpack --config webpack.config.js --node-env production",
+    "build": "npm run clean && NODE_ENV=production && npx webpack --config webpack.config.js --node-env production",
     "gentoc": "markdown-toc -i README.md"
   },
   "husky": {
