@@ -19,6 +19,9 @@ jobs:
 
             - run: npm ci
 
+            - name: Make reports directory
+              run: mkdir .nyc_output
+
             - name: generate report
               run: npm run report
 
