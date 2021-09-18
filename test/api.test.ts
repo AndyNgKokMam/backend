@@ -21,7 +21,7 @@ describe('API tests', () => {
     before((done) => {
         app = express()
         startApp(app)
-        const port = process.env.PORT
+        const port = 8010
         app.listen(port, () => console.log(`App started and listening on port ${port}`))
         done()
     })
