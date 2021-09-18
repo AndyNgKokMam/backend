@@ -29,7 +29,7 @@ describe('API tests', () => {
     describe('GET /health', () => {
         it('should return health', (done) => {
             request(app)
-                .get('/health')
+                .get('http://localhost:8010/health')
                 .expect('Content-Type', /json/)
                 .expect(200)
                 .end((err, res: request.Response) => {
