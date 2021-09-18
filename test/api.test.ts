@@ -1,7 +1,7 @@
 'use strict'
 
 import dotenv from 'dotenv'
-dotenv.config({ path: './env' })
+dotenv.config({ path: './env.test' })
 
 import { expect } from 'chai'
 import { before, describe, it } from 'mocha'
