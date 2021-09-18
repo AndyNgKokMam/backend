@@ -1,4 +1,7 @@
 node_modules
 coverage
 dist
+test-load
+ecosystem.config.js
+index.dist.js
 webpack.config.js

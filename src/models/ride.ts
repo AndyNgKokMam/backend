@@ -21,15 +21,23 @@ export class Ride extends Model<RideAttributes> implements RideAttributes {
     static COLLECTION_NAME = 'Rides'
 
     public _id: string
+
     public rideID: string
 
     public start_lat: number
+
     public start_long: number
+
     public end_lat: number
+
     public end_long: number
+
     public rider_name: string
+
     public driver_name: string
+
     public driver_vehicle: string
+
     public created: Date
 
     create(

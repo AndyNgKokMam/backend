@@ -4,10 +4,9 @@
  * This file defines the functions for sqlite3
  */
 
-import { Sequelize, Model, DataTypes } from 'sequelize'
+import { Sequelize, DataTypes } from 'sequelize'
 import { DatabaseInterface, PaginationInterface } from '../database'
 import { Ride } from '../../models/ride'
-import { Logger } from '../../services/logger.service'
 import { Db } from 'mongodb'
 
 const sequelize = new Sequelize('sqlite::memory:')

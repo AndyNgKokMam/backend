@@ -87,10 +87,10 @@ export const getRidesList = async (req: Request, res: Response) => {
         }
         const data = <Ride[]>await DB.getByQuery(Ride.COLLECTION_NAME, pagination)
         if (data.length > 0) {
-            let has_more = true
-            let links = []
+            let hasMore = true
+            const links = []
             if (data.length < limit) {
-                has_more = false
+                hasMore = false
             } else {
                 links.push({
                     href: `http://${req.headers.host}${req.baseUrl}${req.path}?limit=2&after_id=${
@@ -101,7 +101,7 @@ export const getRidesList = async (req: Request, res: Response) => {
                 })
             }
             return res.json({
-                has_more,
+                has_more: hasMore,
                 data,
                 links
             })

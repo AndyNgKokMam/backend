@@ -2,28 +2,6 @@
 
 The goal of these exercises are to assess your proficiency in software engineering that is related to the daily work that we do at Xendit. Please follow the instructions below to complete the assessment.
 
-## Table of contents
-
-<!-- toc -->
-
-- [Requirements](#requirements)
-- [Setup](#setup)
-- [Tasks](#tasks)
-  * [Documentation](#documentation)
-    + [Success Criteria](#success-criteria)
-  * [Tooling](#tooling)
-  * [Pagination](#pagination)
-    + [Success Criteria](#success-criteria-1)
-  * [Implement Pagination](#implement-pagination)
-  * [Refactoring](#refactoring)
-    + [Success Criteria](#success-criteria-2)
-  * [Security](#security)
-    + [Success Criteria](#success-criteria-3)
-  * [Load Testing](#load-testing)
-    + [Success Criteria](#success-criteria-4)
-
-<!-- tocstop -->
-
 ## Requirements
 
 Node.js `version >8.6 and <= 10`

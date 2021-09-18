@@ -45,5 +45,6 @@ export const startApp = (app: Application) => {
             message: err.message,
             errors: err.errors
         })
+        next()
     })
 }
