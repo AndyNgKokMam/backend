@@ -10,7 +10,7 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - name: Build docs
-              run: ./make.sh
+              run: sudo ./make.sh
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3.7.3
               with:
@@ -18,4 +18,3 @@ jobs:
                   publish_dir: docs
                   force_orphan: true
                   exclude_assets: '.github,docs,LICENSE,README.md,make.sh'
-                  cname: docs.api.jizt.it
