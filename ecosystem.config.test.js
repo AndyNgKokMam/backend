@@ -2,7 +2,7 @@ module.exports = {
     apps: [
         {
             name: 'backend-coding-test',
-            script: 'index.dist.js',
+            script: ' -r dotenv/config index.dist.js dotenv_config_path=/.env.test',
             instances: '2',
             exec_mode : "cluster",
             env: {
