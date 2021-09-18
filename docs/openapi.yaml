@@ -18,6 +18,10 @@ paths:
             responses:
                 '200':
                     description: health response
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
                 default:
                     description: unexpected error
                     content:
