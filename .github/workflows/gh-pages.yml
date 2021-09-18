@@ -15,7 +15,7 @@ jobs:
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3.7.3
               with:
-                  deploy_key: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: docs
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./docs
                   force_orphan: true
                   exclude_assets: '.github,docs,LICENSE,README.md,make.sh'
