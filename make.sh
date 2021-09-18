@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Getting started"
+echo "Start generate docs"
 
 # Bundle docs into zero-dependency HTML file
 npx redoc-cli bundle docs/openapi.yaml && \
