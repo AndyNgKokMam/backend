@@ -30,7 +30,7 @@ describe('API tests', () => {
         it('should return health', (done) => {
             request(app)
                 .get('/health')
-                .expect('Content-Type', /text/)
+                .expect('Content-Type', /json/)
                 .expect(200)
                 .end((err, res: request.Response) => {
                     if (err) return done(err)
