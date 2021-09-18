@@ -17,7 +17,7 @@ import { healthRouter } from './routes/health.router'
 import { ridesRouter } from './routes/ride.router'
 
 const NODE_ENV = process.env.NODE_ENV
-const apiSpec = path.join(process.cwd(), '/docs/api.yml')
+const apiSpec = path.join(process.cwd(), '/docs/api.yaml')
 
 export const startApp = (app: Application) => {
     app.use(bodyParser.json({ limit: '5mb', type: 'application/json' }))

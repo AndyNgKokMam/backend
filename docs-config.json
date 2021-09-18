@@ -1,0 +1,14 @@
+{
+    "docsRoot": "docs",
+    "defaultBranch": "main",
+    "branchPathBase": "preview",
+    "redocTheme": "ga4gh",
+    "buildPages": [
+        {
+            "apiSpecPath": "docs/api.yaml",
+            "htmlOutfile": "index.html",
+            "yamlOutfile": "openapi.yaml",
+            "jsonOutfile": "openapi.json"
+        }
+    ]
+}
