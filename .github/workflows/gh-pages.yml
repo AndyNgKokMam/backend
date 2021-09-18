@@ -9,8 +9,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
+            - run: chmod +x ./make.sh
             - name: Build docs
-              run: sudo ./make.sh
+              run: ./make.sh
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3.7.3
               with:
