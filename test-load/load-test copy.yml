@@ -1,0 +1,64 @@
+config:
+    target: 'http://localhost:8010'
+    phases:
+        - duration: 30
+          arrivalRate: 100
+          name: 100 rps for 30s
+        - duration: 30
+          arrivalRate: 150
+          rampTo: 1000
+          name: 150 rps for 60s
+    payload:
+        path: 'load-data.csv'
+        fields:
+            - 'start_lat'
+            - 'start_long'
+            - 'end_lat'
+            - 'end_long'
+            - 'rider_name'
+            - 'driver_name'
+            - 'driver_vehicle'
+    processor: 'conversion.js'
+    ensure:
+        p99: 50
+        maxErrorRate: 1
+scenarios:
+    - name: 'Save ride'
+      flow:
+          - post:
+                url: '/rides'
+                beforeRequest: 'convertIDToInt'
+                json:
+                    start_lat: '{{ start_lat }}'
+                    start_long: '{{ start_long }}'
+                    end_lat: '{{ end_lat }}'
+                    end_long: '{{ end_long }}'
+                    rider_name: '{{ rider_name }}'
+                    driver_name: '{{ driver_name }}'
+                    driver_vehicle: '{{ driver_vehicle }}'
+                gzip: true
+    - name: 'Get rides'
+      flow:
+          - get:
+                url: '/rides'
+                qs:
+                    limit: 10
+    - name: 'Save ride and get'
+      flow:
+          - post:
+                url: '/rides'
+                beforeRequest: 'convertIDToInt'
+                json:
+                    start_lat: '{{ start_lat }}'
+                    start_long: '{{ start_long }}'
+                    end_lat: '{{ end_lat }}'
+                    end_long: '{{ end_long }}'
+                    rider_name: '{{ rider_name }}'
+                    driver_name: '{{ driver_name }}'
+                    driver_vehicle: '{{ driver_vehicle }}'
+                gzip: true
+                capture:
+                    - json: '$._id'
+                      as: 'rideId'
+          - get:
+                url: '/rides/{{ rideId }}'
