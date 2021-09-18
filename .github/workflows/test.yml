@@ -12,6 +12,7 @@ jobs:
     test:
         runs-on: ubuntu-latest
         strategy:
+            fail-fast: false
             matrix:
                 node: ['10', '8']
         name: Test with Node version ${{ matrix.node }}
